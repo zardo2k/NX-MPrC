@@ -3,23 +3,23 @@ var firebaseConfig = {
 }
 var clusterConfigs = [
   {
-    host: '10.3.189.126',
+    host: '10.3.205.61',
     port: 9440,
     username: 'admin',
     password: 'admin'
   },
-  {
-    host: '10.3.100.73',
-    port: 9440,
-    username: 'viewonly',
-    password: 'viewonly'
-  },
-  {
-    host: '1.1.1.1',
-    port: 9440,
-    username: 'viewonly',
-    password: 'viewonly'
-  }
+//  {
+//    host: '10.3.100.73',
+//    port: 9440,
+//    username: 'viewonly',
+//    password: 'viewonly'
+//  },
+//  {
+//    host: '10.4.41.29',
+//    port: 9440,
+//    username: 'admin',
+//    password: 'admin'
+//  }
 ]
 
 module.exports.clusterConfigs = clusterConfigs;

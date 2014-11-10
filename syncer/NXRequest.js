@@ -7,16 +7,17 @@ var request = require('request');
 
 var BASEPATH = '/PrismGateway/services/rest/v1';
 var URL = {
+  CLUSTER: BASEPATH + '/cluster',
   CLUSTERS: BASEPATH + '/clusters',
   CLUSTER_STATS: BASEPATH + '/cluster/stats'
 }
 
-function NXRequest(ip, port, username, password) {
-  this.ip = ip;
+function NXRequest(host, port, username, password) {
+  this.host = host;
   this.port = port;
   this.username = username;
   this.password = password;
-  this.baseHttp = util.format('https://%s:%s', ip, port);
+  this.baseHttp = util.format('https://%s:%s', host, port);
 
   var base64String = username + ':' + password;
   var requestOptions = {
@@ -28,14 +29,14 @@ function NXRequest(ip, port, username, password) {
   };
   this.request = request.defaults(requestOptions);
 
-  var loginUrl = this.baseHttp + '/PrismGateway/nmb/loginsuccess';
-
-  this.request.get(loginUrl, function(error, res, body) {
-      if (error) {
-        return console.error(error);
-      }
-      console.log('Login ' + body);
-    });
+//  var loginUrl = this.baseHttp + '/PrismGateway/nmb/loginsuccess';
+//
+//  this.request.get(loginUrl, function(error, res, body) {
+//      if (error) {
+//        return console.error(error);
+//      }
+//      console.log('Login ' + body);
+//    });
 }
 NXRequest.prototype._get = function(defaultUrl, options, callback) {
   if (typeof options === 'object') {
@@ -60,6 +61,16 @@ NXRequest.prototype._get = function(defaultUrl, options, callback) {
 NXRequest.prototype.getClusters = function(options, callback) {
   var defaultUrl = this.baseHttp + URL.CLUSTERS;
   this._get(defaultUrl, options, callback);
+};
+
+// Update cluster data.
+NXRequest.prototype.putCluster = function(data, callback) {
+  var defaultUrl = this.baseHttp + URL.CLUSTER;
+  this.request.put({
+    url: defaultUrl,
+    body: data,
+    json: true
+  }, callback)
 };
 
 // Fetch stats data

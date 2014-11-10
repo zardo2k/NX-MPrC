@@ -5,6 +5,12 @@ var fbRootPath = new FireBase(fireBaseConfig.rootPath);
 var fbClusters = fbRootPath.child('Clusters');
 var fbClusterStats = fbRootPath.child('ClusterStats');
 
-
 module.exports.fbClusters = fbClusters;
 module.exports.fbClusterStats = fbClusterStats;
+
+// Listeners
+
+//fbClusters.child('name').on('value', function(snapshot) {
+//  console.log(snapshot.val());
+//
+//});
