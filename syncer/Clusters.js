@@ -1,8 +1,12 @@
-function Clusters() {
+var Cluster = require('./Cluster.js').Cluster;
+
+function Clusters(clusterConfigs) {
   this.clusters = [];
+
+  clusterConfigs.forEach(function(config) {
+    var cluster = new Cluster(config);
+    this.clusters.push(cluster);
+  }, this);
 }
 
-Clusters.prototype.push = function(cluster) {
-  this.clusters.push(cluster);
-
-}
+module.exports.Clusters = Clusters;

@@ -1,0 +1,4 @@
+- Down cluster, need to stop polling on all the related cluster services.
+  Mark the cluster as down.
+- Down node js.  Need to include last update time on the Cluster.  UI can
+  make use of this info to hightly down.

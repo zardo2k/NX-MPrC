@@ -7,9 +7,12 @@ var request = require('request');
 
 var BASEPATH = '/PrismGateway/services/rest/v1';
 var URL = {
+  AlERTS: BASEPATH + '/alerts',
   CLUSTER: BASEPATH + '/cluster',
   CLUSTERS: BASEPATH + '/clusters',
-  CLUSTER_STATS: BASEPATH + '/cluster/stats'
+  CLUSTER_STATS: BASEPATH + '/cluster/stats',
+  VMS: BASEPATH + '/vms',
+  CONTAINERS: BASEPATH + '/containers'
 }
 
 function NXRequest(host, port, username, password) {
@@ -93,5 +96,20 @@ NXRequest.prototype.getClusterStats = function(options, callback) {
   }
 
 };
+
+NXRequest.prototype.getVMs = function(options, callback) {
+  var defaultUrl = this.baseHttp + URL.VMS;
+  this._get(defaultUrl, options, callback);
+}
+
+NXRequest.prototype.getClusterContainers = function(options, callback) {
+  var defaultUrl = this.baseHttp + URL.CONTAINERS;
+  this._get(defaultUrl, options, callback);
+}
+
+NXRequest.prototype.getClusterAlerts = function(options, callback) {
+  var defaultUrl = this.baseHttp + URL.AlERTS;
+  this._get(defaultUrl, options, callback);
+}
 
 module.exports.NXRequest = NXRequest;
