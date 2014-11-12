@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/mobile.css" rel="stylesheet">
+    <link href="css/van.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/angularfire/dist/angularfire.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+
+    <script src="js/FbClustersSrv.js"></script>
+    <script src="js/FbVMsSrv.js"></script>
+
+    <script src="js/ClusterCtrl.js"></script>
+    <script src="js/ClustersCtrl.js"></script>
+    <script src="js/SideBarCtrl.js"></script>
+    <script src="js/NavBarCtrl.js"></script>
+  </head>
+  <body ng-app="starter">
+  <div id="n-content-wrapper">
+
+    <ion-side-menus>
+      <!-- Center content -->
+      <ion-side-menu-content>
+        <div id="nav"
+             ng-controller="NavBarCtrl">
+          <label class="nav-trigger"
+                 ng-click="toggleLeftSideMenu()"></label>
+          <!--     <a class="n-logo-link">
+                <img src="images/header-logo.png">
+              </a> -->
+          <span class="n-nav-label">{{Resources.currentSelectCluster}}</span>
+
+        </div>
+
+        <ion-nav-view animation="slide-left-right"
+          class="main-content-view">
+          <!-- Center content -->
+        </ion-nav-view>
+      </ion-side-menu-content>
+
+      <!-- Left menu -->
+      <ion-side-menu side="left"
+        ng-controller="SideBarCtrl">
+        <ion-list>
+          <ion-item ng-click="onSelectCluster('All Clusters')">All Clusters</ion-item>
+          <ion-item ng-repeat="cluster in clusters"
+            ng-click="onSelectCluster(cluster)">
+            {{cluster.name}}
+          </ion-item>
+        </ion-list>
+      </ion-side-menu>
+
+      <!-- Right menu -->
+      <ion-side-menu side="right">
+      </ion-side-menu>
+    </ion-side-menus>
+  </div>
+  </body>
+</html>

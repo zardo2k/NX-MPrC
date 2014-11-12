@@ -12,7 +12,8 @@ var URL = {
   CLUSTERS: BASEPATH + '/clusters',
   CLUSTER_STATS: BASEPATH + '/cluster/stats',
   VMS: BASEPATH + '/vms',
-  CONTAINERS: BASEPATH + '/containers'
+  CONTAINERS: BASEPATH + '/containers',
+  HOSTS: BASEPATH + '/hosts'
 }
 
 function NXRequest(host, port, username, password) {
@@ -109,6 +110,11 @@ NXRequest.prototype.getClusterContainers = function(options, callback) {
 
 NXRequest.prototype.getClusterAlerts = function(options, callback) {
   var defaultUrl = this.baseHttp + URL.AlERTS;
+  this._get(defaultUrl, options, callback);
+}
+
+NXRequest.prototype.getClusterHosts = function(options, callback) {
+  var defaultUrl = this.baseHttp + URL.HOSTS;
   this._get(defaultUrl, options, callback);
 }
 

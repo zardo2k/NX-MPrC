@@ -32,6 +32,8 @@ ClusterVMs.prototype.syncData = function() {
     }
 
     var vmsObject = JSON.parse(body);
+    NXFirebase.fbClustersSummary.child(_this.clusterUuid).child('totalVMs').
+      set(vmsObject.entities.length || 0);
     vmsObject.entities.forEach(function(vm) {
       NXFirebase.fbClusterVMs.child(_this.clusterUuid).child(vm.vmId).update(vm);
     });

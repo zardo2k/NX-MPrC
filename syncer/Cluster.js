@@ -4,6 +4,7 @@ var ClusterStats = require('./ClusterStats.js').ClusterStats;
 var ClusterVMs = require('./ClusterVMs.js').ClusterVMs;
 var ClusterContainers = require('./ClusterContainers.js').ClusterContainers;
 var ClusterAlerts = require('./ClusterAlerts.js').ClusterAlerts;
+var ClusterHosts = require('./ClusterHosts.js').ClusterHosts;
 var Utils = require('./Utils.js');
 
 function Cluster(clusterConfig) {
@@ -137,7 +138,8 @@ Cluster.prototype.onReady = function(callback) {
 
   this.containers = new ClusterContainers(this.clusterUuid, this.nxRequest);
 
-  this.alerts = new ClusterAlerts(this.clusterUuid, this.nxRequest);
+  // this.alerts = new ClusterAlerts(this.clusterUuid, this.nxRequest);
 
+  this.hosts = new ClusterHosts(this.clusterUuid, this.nxRequest);
 }
 

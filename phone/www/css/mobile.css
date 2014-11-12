@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  background: #fafafa; }
+
+#n-content-wrapper {
+  padding-top: 59px; }
+
+#nav {
+  background: #343536;
+  height: 59px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+  #nav .n-logo-link {
+    position: absolute;
+    left: 40px;
+    display: block;
+    width: 36px;
+    height: 20px;
+    margin-left: -18px;
+    margin-top: 20px; }
+  #nav .nav-trigger {
+    position: fixed;
+    left: 15px;
+    top: 22px;
+    z-index: 2;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg style='fill: white;' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='20' height='2'/><rect y='14' width='20' height='2'/><rect y='7' width='20' height='2'/></svg>");
+    background-size: contain; }
+  #nav .n-nav-label {
+    line-height: 63px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: 'ProximaNovaSoft', Helvetica Neue, Helvetica, Arial, sans-serif;
+    /* text-align: center; */
+    position: relative;
+    left: 57px; }
+
+.n-vantage-point {
+  height: 100%;
+  background: white;
+  border: 1px solid #dbdee0;
+  border-radius: 4px;
+  color: #6f787e;
+  padding: 12px 15px;
+  margin: 20px; }
+  .n-vantage-point .n-title {
+    margin-bottom: 10px; }
+  .n-vantage-point .n-h3 {
+    color: #343536;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700; }
+  .n-vantage-point .n-storage-good {
+    color: #c2d5a0; }

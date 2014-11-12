@@ -9,4 +9,6 @@ function Clusters(clusterConfigs) {
   }, this);
 }
 
-module.exports.Clusters = Clusters;
+module.exports.Clusters = Clusters
+
+;
