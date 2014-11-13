@@ -2,3 +2,4 @@
   Mark the cluster as down.
 - Down node js.  Need to include last update time on the Cluster.  UI can
   make use of this info to hightly down.
+- On Sync need to remove item.. like VM removed from the server.

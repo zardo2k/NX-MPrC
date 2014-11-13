@@ -31,5 +31,36 @@ function isRequestFailed(error, res, body) {
   }
   return false;
 }
+
+// Functions (Prefix Multiplier)
+//------------------------------
+
+// Converts numerical value to readable format with prefix multiplier
+// @param value   - The numerical value that will be converted
+// @param symbol    - The symbol appended to the prefix multiplier
+// Example: Converts 1000000 Hz to 1MHz
+function prefixFormat(value, symbol) {
+  // Prefix array
+  var prefix = [ '',  // Plain
+    'K', // Kilo
+    'M', // Mega
+    'G', // Giga
+    'T', // Tera
+    'P'  // Penta
+  ];
+
+  if (isNaN(value) || value === 0 || value === null) {
+    return 0 + (symbol ? (' ' + symbol) : 0);
+  }
+
+  for (var i = prefix.length-1; i >= 0; i--) {
+    if ((value / Math.pow(1000, i)) >= 1 || i === 0) {
+      // Search for the correct symbol then round off
+      return Math.round((value / Math.pow(1000, i)) * 100) / 100 +
+        (symbol ? (' ' + prefix[i] + symbol) : 0);
+    }
+  }
+}
 module.exports.cleanKeyStrings = cleanKeyStrings;
 module.exports.isRequestFailed = isRequestFailed;
+module.exports.prefixFormat = prefixFormat;

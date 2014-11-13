@@ -21,7 +21,7 @@ function Cluster(clusterConfig) {
       this.username, this.password)
 
   this.syncData();
-  setInterval(this.syncData.bind(this), 30000);
+  setInterval(this.syncData.bind(this), 15000);
 }
 
 module.exports.Cluster = Cluster;
@@ -61,6 +61,20 @@ Cluster.prototype.syncData = function() {
         console.error('ERROR: problem updating data');
       }
     });
+
+    NXFirebase.fbClustersSummary.child(cluster.clusterUuid).update({
+      totalCPUInPPMUsed : cluster.stats.hypervisor_cpu_usage_ppm,
+      // Round it to 2 decimal places.
+      // PPM / 10000 give %.
+      totalCPUInPercentDispStr:
+          Math.round(cluster.stats.hypervisor_cpu_usage_ppm /
+          100) / 100,
+      totalMemoryPPMUsed: cluster.stats.hypervisor_memory_usage_ppm,
+      totalMemoryPercentDispStr:
+          Math.round(cluster.stats.hypervisor_memory_usage_ppm /
+          100) / 100
+
+    })
 
     if (!_this.isReady) {
       _this.clusterEntity = cluster;
@@ -134,7 +148,7 @@ Cluster.prototype.onReady = function(callback) {
   this.clusterStats = new ClusterStats(this.clusterUuid,
       this.clusterEntity.stats, this.nxRequest);
 
-  this.vms = new ClusterVMs(this.clusterUuid, this.nxRequest);
+  //this.vms = new ClusterVMs(this.clusterUuid, this.nxRequest);
 
   this.containers = new ClusterContainers(this.clusterUuid, this.nxRequest);
 

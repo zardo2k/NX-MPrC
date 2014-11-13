@@ -7,10 +7,12 @@ var fbClusterAlerts = fbRootPath.child('ClusterAlerts');
 var fbClusterHosts = fbRootPath.child('ClusterHosts');
 var fbClusterStats = fbRootPath.child('ClusterStats');
 var fbClusterVMs = fbRootPath.child('ClusterVMs');
-var fbClusterContainers = fbRootPath.child('Containers');
+var fbClusterContainers = fbRootPath.child('ClusterContainers');
 var fbTasksNew = fbRootPath.child('Tasks/New');
 var fbTasksFinished = fbRootPath.child('Tasks/Finished');
 var fbClustersSummary = fbRootPath.child('ClustersSummary');
+var fbClusterStoragePools = fbRootPath.child('ClusterStoragePools');
+var fbSummary = fbRootPath.child('Summary');
 
 module.exports.fbClusters = fbClusters;
 module.exports.fbClusterAlerts = fbClusterAlerts;
@@ -21,6 +23,7 @@ module.exports.fbTasksNew = fbTasksNew;
 module.exports.fbTasksFinished = fbTasksFinished;
 module.exports.fbClusterContainers = fbClusterContainers;
 module.exports.fbClustersSummary = fbClustersSummary;
+module.exports.fbClusterStoragePools = fbClusterStoragePools;
 
 // Listeners
 

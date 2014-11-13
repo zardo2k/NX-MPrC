@@ -2,6 +2,23 @@
 <!-- The title of the ion-view will be shown on the navbar -->
 <ion-view title="'Cluster'" ng-controller="ClustersCtrl">
   <ion-content>
-    clusters
+    <ion-list>
+      <ion-item>
+        <div class="n-vantage-point">
+          <div class="n-vantage-point-metric-small">
+            <div class="n-title">Summary</div>
+            <div class="n-metric-value">
+              <div class="n-h3 lblValue">{{clusters.length}} clusters</div>
+            </div>
+          </div>
+          <ul>
+            <li ng-repeat="(version, count) in versionGroups">
+              <div class="n-h3 lblValue">{{count}} NOS {{version}}</div>
+            </li>
+          </ul>
+        </div>
+      </ion-item>
+
+    </ion-list>
   </ion-content>
 </ion-view>

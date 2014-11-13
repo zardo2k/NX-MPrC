@@ -13,6 +13,7 @@ var URL = {
   CLUSTER_STATS: BASEPATH + '/cluster/stats',
   VMS: BASEPATH + '/vms',
   CONTAINERS: BASEPATH + '/containers',
+  STORAGE_POOLS: BASEPATH + '/storage_pools',
   HOSTS: BASEPATH + '/hosts'
 }
 
@@ -114,6 +115,11 @@ NXRequest.prototype.getClusterAlerts = function(options, callback) {
 }
 
 NXRequest.prototype.getClusterHosts = function(options, callback) {
+  var defaultUrl = this.baseHttp + URL.HOSTS;
+  this._get(defaultUrl, options, callback);
+}
+
+NXRequest.prototype.getClusterStoragePools = function(options, callback) {
   var defaultUrl = this.baseHttp + URL.HOSTS;
   this._get(defaultUrl, options, callback);
 }

@@ -51,11 +51,14 @@ angular.module('starter',
         templateUrl: 'templates/music.html'
       });
 
-      $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/clusters');
   }])
 
   .value({Resources : {
-    currentSelectCluster: 'All Clusters'
+    currentSelectCluster: {
+      name: 'All Clusters',
+      id: null
+    }
   }})
 
   .constant({FB_BASE_URL: 'https://nx-cluster-example.firebaseio.com'});

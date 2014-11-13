@@ -1,10 +1,11 @@
-angular.module('ClusterCtrlModule', ['FbClustersSrvModule'])
+angular.module('ClusterCtrlModule', ['FbClustersSrvModule',
+  'FbClustersSummarySrvModule'])
   .controller('ClusterCtrl',
-    ['$scope', '$state', 'FbClustersSrv', 'FbVMsSrv',
-      function($scope, $state,FbClustersSrv, FbVMsSrv) {
+    ['$scope', '$state', 'FbClustersSrv', 'FbVMsSrv', 'FbClustersSummarySrv',
+      function($scope, $state,FbClustersSrv, FbVMsSrv, FbClustersSummarySrv) {
         console.log($state);
-        $scope.cluster = FbClustersSrv.getById($state.params.id);
-        $scope.vms = FbVMsSrv.getByClusterUuid($state.params.id);
+        $scope.clusterSummary =
+            FbClustersSummarySrv.getByClusterUuid($state.params.id);
       }
     ]
   );

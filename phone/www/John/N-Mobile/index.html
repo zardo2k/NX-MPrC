@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
 
@@ -21,7 +20,7 @@ Copyright (c) 2013 Nutanix Inc. All rights reserved.
   <title>Nutanix Web Console</title>
 
   <!-- Meta -->
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <meta name="description" content="Nutanix UI">
   <meta name="author" content="Prism Team">
 
@@ -32,7 +31,7 @@ Copyright (c) 2013 Nutanix Inc. All rights reserved.
   <meta http-equiv="expires" content="-1">
 
   <!-- Compatibility Mode -->
-  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"/>
 
   <!-- Favicon.ico -->
   <link rel="shortcut icon" type="image/x-icon"
@@ -51,9 +50,9 @@ Copyright (c) 2013 Nutanix Inc. All rights reserved.
         href="app/assets/images/favicon/apple-touch-icon-ipad3.png">
 
   <!-- Style: Nutanix web console style -->
-  <link href="css/nutanix-1.css" rel="stylesheet" />
-  <link href="css/nutanix-2.css" rel="stylesheet" />
-  <link href="css/mobile.css" rel="stylesheet" />
+  <link href="css/nutanix-1.css" rel="stylesheet"/>
+  <link href="css/nutanix-2.css" rel="stylesheet"/>
+  <link href="css/mobile.css" rel="stylesheet"/>
 
 
 </head>
@@ -61,69 +60,205 @@ Copyright (c) 2013 Nutanix Inc. All rights reserved.
 <body>
 
 
-
-
-
-
 <div id="n-content-wrapper">
 
   <div id="nav">
     <label class="nav-trigger"></label>
-<!--     <a class="n-logo-link">
-      <img src="images/header-logo.png">
-    </a> -->
+    <!--     <a class="n-logo-link">
+          <img src="images/header-logo.png">
+        </a> -->
     <span class="n-nav-label">Summary</span>
+    <span class="n-nav-label" style="display:none;">Alerts</span>
   </div>
 
+  <div class="sectionSummary">
+    <div class="n-vantage-point">
+      <div class="n-vantage-point-metric-small">
+        <div class="n-title">Cluster CPU Usage</div>
+        <div class="n-metric-value">
+          <div class="n-h3 lblValue">37.69<span class="n-stats-unit">%</span>
+          </div>
+          <span class="lblResource">OF 1.07 THz</span>
+        </div>
+      </div>
+    </div>
 
-<div class="n-vantage-point">
-  <div class="n-vantage-point-metric-small">
-    <div class="n-title">Cluster CPU Usage</div>
-    <div class="n-metric-value">
-      <div class="n-h3 lblValue">37.69<span class="n-stats-unit">%</span></div>
-      <span class="lblResource">OF 1.07 THz</span>
+    <div
+      class="n-vantage-point n-vantage-point-metric n-vantage-point-timeline-metric n-action-enabled">
+      <div class="n-vantage-point-metric-small">
+        <div class="n-title">Cluster Memory Usage</div>
+        <div class="n-metric-value">
+          <div class="n-h3 lblValue">29.59<span class="n-stats-unit">%</span>
+          </div>
+          <span class="lblResource">OF 255.96 GIB</span>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="n-vantage-point n-vantage-point-metric n-vantage-point-timeline-metric n-action-enabled">
+      <div class="n-vantage-point-metric-small">
+        <div class="n-title">VM Summary</div>
+        <div class="n-metric-value">
+          <div class="n-h3 lblValue">632</div>
+          <span class="lblResource">VMS</span>
+        </div>
+      </div>
+      <div class="info">
+        <ul class="n-label-column-list">
+
+          <li>
+            <p class="n-col-1">
+              <a title="On" class="n-vm-state-icon n-on"></a>
+              On
+            </p>
+
+            <p class="n-col-2">4</p>
+
+            <div class="n-clearfix"></div>
+          </li>
+
+          <li>
+            <p class="n-col-1">
+              <a title="Off" class="n-vm-state-icon n-off"></a>
+              Off
+            </p>
+
+            <p class="n-col-2">0</p>
+
+            <div class="n-clearfix"></div>
+          </li>
+
+          <li>
+            <p class="n-col-1">
+              <a title="Suspended" class="n-vm-state-icon n-suspended"></a>
+              Suspended
+            </p>
+
+            <p class="n-col-2">0</p>
+
+            <div class="n-clearfix"></div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="n-vantage-point n-vantage-point-metric n-vantage-point-timeline-metric n-action-enabled">
+      <div class="n-vantage-point-half">
+        <div class="n-title">Storage Summary</div>
+        <div class="n-metric-value">
+          <div class="n-h3 n-storage-good">99.84<span
+            class="n-stats-unit">%</span></div>
+          <span class="lblResource">FREE (PHYSICAL)</span>
+        </div>
+      </div>
+      <div class="info">
+        <ul class="n-label-column-list">
+
+          <li>
+            <p class="n-col-1">
+              <a title="On" class="n-vm-state-icon n-on"></a>
+              On
+            </p>
+
+            <p class="n-col-2">4</p>
+
+            <div class="n-clearfix"></div>
+          </li>
+
+          <li>
+            <p class="n-col-1">
+              <a title="Off" class="n-vm-state-icon n-off"></a>
+              Off
+            </p>
+
+            <p class="n-col-2">0</p>
+
+            <div class="n-clearfix"></div>
+          </li>
+
+          <li>
+            <p class="n-col-1">
+              <a title="Suspended" class="n-vm-state-icon n-suspended"></a>
+              Suspended
+            </p>
+
+            <p class="n-col-2">0</p>
+
+            <div class="n-clearfix"></div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+
+    <div
+      class="n-vantage-point n-vantage-point-metric n-vantage-point-timeline-metric n-action-enabled">
+      <div class="n-vantage-point-metric-small">
+        <div class="n-title">Alerts</div>
+        <div class="n-metric-value-alerts">
+          <div class="n-h3 critical">16</div>
+          <span class="lblResource">CRITICAL</span>
+        </div>
+        <div class="n-metric-value-alerts">
+          <div class="n-h3 warning">4</div>
+          <span class="lblResource">WARNING</span>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- /section-summary -->
+
+
+  <div class="sectionAlerts" style="display:none;">
+    <div
+      class="n-vantage-point n-vantage-point-metric n-vantage-point-timeline-metric n-action-enabled">
+      <div class="n-vantage-point-metric-small">
+        <div class="n-title">
+          <div class="n-alert-icon n-warning-icon"></div>
+          Warning
+          <div class="time">2 hours ago</div>
+        </div>
+        <div class="n-metric-value">
+          <span class="lblResource">Disk space usage for /home on Controller VM 10.4.36.141 has exceeded 75%.</span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="n-vantage-point n-vantage-point-metric n-vantage-point-timeline-metric n-action-enabled">
+      <div class="n-vantage-point-metric-small">
+        <div class="n-title">
+          <div class="n-alert-icon n-info-icon"></div>
+          Info
+          <div class="time">1 day ago</div>
+        </div>
+        <div class="n-metric-value">
+          <span class="lblResource">Device with disk id 36457 on Controller VM 10.4.36.144 is not part of any storage pool.</span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="n-vantage-point n-vantage-point-metric n-vantage-point-timeline-metric n-action-enabled">
+      <div class="n-vantage-point-metric-small">
+        <div class="n-title">
+          <div class="n-alert-icon n-critical-icon"></div>
+          Critical
+          <div class="time">2 days ago</div>
+        </div>
+        <div class="n-metric-value">
+          <span class="lblResource">Controller VM 10.4.36.144 has been rebooted on Thu Nov  6 11:17:00 2014.</span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
-
-
-
-  <div class="n-vantage-point n-vantage-point-metric n-vantage-point-timeline-metric n-action-enabled">
-    <div class="n-vantage-point-metric-small">
-      <div class="n-title">Cluster Memory Usage</div>
-       <div class="n-metric-value">
-        <div class="n-h3 lblValue">29.59<span class="n-stats-unit">%</span></div>
-      <span class="lblResource">OF 255.96 GIB</span>
-    </div>
-  </div>
-</div>
-
-  <div class="n-vantage-point n-vantage-point-metric n-vantage-point-timeline-metric n-action-enabled">
-    <div class="n-vantage-point-metric-small">
-      <div class="n-title">VM Summary</div>
-       <div class="n-metric-value">
-        <div class="n-h3 lblValue">632</div>
-      <span class="lblResource">VMS</span>
-    </div>
-  </div>
-</div>
-
-
-  <div class="n-vantage-point n-vantage-point-metric n-vantage-point-timeline-metric n-action-enabled">
-    <div class="n-vantage-point-metric-small">
-      <div class="n-title">Storage Summary</div>
-       <div class="n-metric-value">
-        <div class="n-h3 n-storage-good">99.84<span class="n-stats-unit">%</span></div>
-      <span class="lblResource">FREE (PHYSICAL)</span>
-    </div>
-  </div>
-</div>
-
 
 
 </div>
-
 
 
 </body>

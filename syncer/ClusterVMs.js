@@ -31,12 +31,34 @@ ClusterVMs.prototype.syncData = function() {
       return;
     }
 
+    var summaryData = {
+      totalVMs: 0,
+      totalVMsOn: 0,
+      totalVMsOff: 0,
+      totalVMsSuspended: 0
+    }
     var vmsObject = JSON.parse(body);
-    NXFirebase.fbClustersSummary.child(_this.clusterUuid).child('totalVMs').
-      set(vmsObject.entities.length || 0);
+
     vmsObject.entities.forEach(function(vm) {
       NXFirebase.fbClusterVMs.child(_this.clusterUuid).child(vm.vmId).update(vm);
+      switch (vm.powerState) {
+        case 'on':
+          summaryData.totalVMsOn += 1;
+          break;
+        case 'off':
+          summaryData.totalVMsOff += 1;
+          break;
+        case 'suspended':
+          summaryData.totalVMsSuspended += 1;
+          break;
+        default:
+          console.error('WARNING: On a recognized VM Powerstate');
+      }
     });
+
+    summaryData.totalVMs = vmsObject.entities.length || 0;
+    NXFirebase.fbClustersSummary.child(_this.clusterUuid).update(summaryData);
+
   });
 }
 

@@ -25,6 +25,7 @@
     <script src="js/controllers.js"></script>
 
     <script src="js/FbClustersSrv.js"></script>
+    <script src="js/FbClustersSummarySrv.js"></script>
     <script src="js/FbVMsSrv.js"></script>
 
     <script src="js/ClusterCtrl.js"></script>
@@ -45,7 +46,8 @@
           <!--     <a class="n-logo-link">
                 <img src="images/header-logo.png">
               </a> -->
-          <span class="n-nav-label">{{Resources.currentSelectCluster}}</span>
+          <span class="n-nav-label"
+            ng-click="showRenamePopup()">{{cluster.name}}</span>
 
         </div>
 

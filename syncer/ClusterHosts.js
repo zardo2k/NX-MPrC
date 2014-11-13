@@ -44,13 +44,13 @@ ClusterHosts.prototype.syncData = function() {
       delete item.healthSummary;
       summaryData.totalCPUCores += item.numCpuCores;
       summaryData.totalCPUSockets += item.numCpuSockets;
-      summaryData.totalCPUFrequencyInHz += item.cpuFrequencyInHz;
+      summaryData.totalCPUFrequencyInHz += item.cpuFrequencyInHz * item.numCpuCores;
       summaryData.totalmemoryCapacityInBytes += item.memoryCapacityInBytes;
 
 
-      summaryData.totalCPUFrequencyInHzUsed +=
-        parseInt(item.stats.hypervisor_cpu_usage_ppm) < 0? 0 :
-          parseInt(item.stats.hypervisor_cpu_usage_ppm);
+      //summaryData.totalCPUFrequencyInHzUsed +=
+      //  parseInt(item.stats.hypervisor_cpu_usage_ppm) < 0? 0 :
+      //    parseInt(item.stats.hypervisor_cpu_usage_ppm);
 
       summaryData.totalmemoryCapacityInBytesUsed +=
         parseInt(item.stats.hypervisor_memory_usage_ppm) < 0? 0 :
@@ -60,8 +60,13 @@ ClusterHosts.prototype.syncData = function() {
       NXFirebase.fbClusterHosts.child(_this.clusterUuid).child(item[_this.idAttribute]).update(item);
     });
 
+    summaryData.totalCPUFrequencyDispStr =
+        Utils.prefixFormat(summaryData.totalCPUFrequencyInHz, 'Hz')
+    summaryData.totalmemoryCapacityDispStr =
+        Utils.prefixFormat(summaryData.totalmemoryCapacityInBytes, 'iB')
 
-    NXFirebase.fbClustersSummary.child(_this.clusterUuid).set(summaryData)
+
+    NXFirebase.fbClustersSummary.child(_this.clusterUuid).update(summaryData)
   });
 }
 
