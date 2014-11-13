@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="IdProvider" IDEtalkID="AC8E266A0A1BF9B8C407C1A4DE1C20B4" />
   <component name="JsBowerSettings">
     <exe-path>/usr/local/bin/bower</exe-path>
     <config-path />
   </component>
-  <component name="ProjectRootManager" version="2" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_3" assert-keyword="false" jdk-15="false" />
   <component name="masterDetails">
     <states>
       <state key="ScopeChooserConfigurable.UI">
