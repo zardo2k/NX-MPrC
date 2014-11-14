@@ -1,7 +1,8 @@
 
 <!-- The title of the ion-view will be shown on the navbar -->
-<ion-view title="'Cluster'">
-  <ion-content ng-controller="ClusterCtrl">
+<ion-view title="{{cluster.name}}"
+          ng-controller="ClusterCtrl">
+  <ion-content>
   <ion-list>
     <ion-item>
       <div class="n-vantage-point">
@@ -36,24 +37,24 @@
         </div>
       </div>
     </ion-item>
-    <div
-      class="n-vantage-point n-vantage-point-metric n-vantage-point-timeline-metric n-action-enabled">
-      <div class="n-vantage-point-metric-small">
-        <div class="n-title">Alerts</div>
-        <div class="n-metric-value-alerts">
-          <div class="n-h3 critical">16</div>
-          <span class="lblResource">CRITICAL</span>
-        </div>
-        <div class="n-metric-value-alerts">
-          <div class="n-h3 warning">4</div>
-          <span class="lblResource">WARNING</span>
+    <ion-item ng-click="gotoAlertsView(cluster.clusterUuid)">
+      <div class="n-vantage-point n-vantage-point-metric n-vantage-point-timeline-metric n-action-enabled">
+        <div class="n-vantage-point-metric-small">
+          <div class="n-title">Alerts</div>
+          <div class="n-metric-value-alerts">
+            <div class="n-h3 critical">{{(alerts | filter: 'kCritical')
+              .length }}</div>
+            <span class="lblResource">CRITICAL</span>
+          </div>
+          <div class="n-metric-value-alerts">
+            <div class="n-h3 warning">{{(alerts | filter: 'kWarning')
+              .length }}</div>
+            <span class="lblResource">WARNING</span>
+          </div>
         </div>
       </div>
-    </div>
-    <ion-item>
-
     </ion-item>
-    <ion-item> MORE </ion-item>
+
   </ion-list>
   </ion-content>
 </ion-view>

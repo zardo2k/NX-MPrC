@@ -152,7 +152,7 @@ Cluster.prototype.onReady = function(callback) {
 
   this.containers = new ClusterContainers(this.clusterUuid, this.nxRequest);
 
-  // this.alerts = new ClusterAlerts(this.clusterUuid, this.nxRequest);
+  this.alerts = new ClusterAlerts(this.clusterUuid, this.nxRequest);
 
   this.hosts = new ClusterHosts(this.clusterUuid, this.nxRequest);
 }

@@ -8,14 +8,14 @@ angular.module('SideBarModule', ['FbClustersSrvModule'])
 
         $scope.onSelectCluster = function(cluster) {
           if(typeof cluster === 'string') {
-            Resources.currentSelectCluster.name = cluster;
-            Resources.currentSelectCluster.id = null;
-            $ionicNavBarDelegate.$getByHandle('myNav').setTitle('ALL')
+//            Resources.currentSelectCluster.name = cluster;
+//            Resources.currentSelectCluster.id = null;
+//            $ionicNavBarDelegate.$getByHandle('myNav').setTitle('ALL')
             $state.go('home');
           } else {
-            $ionicNavBarDelegate.$getByHandle('myNav').setTitle('newTitle')
-            Resources.currentSelectCluster.name = cluster.name;
-            Resources.currentSelectCluster.id = cluster.clusterUuid;
+//            $ionicNavBarDelegate.$getByHandle('myNav').setTitle('newTitle')
+//            Resources.currentSelectCluster.name = cluster.name;
+//            Resources.currentSelectCluster.id = cluster.clusterUuid;
             $state.go('clusters', {id: cluster.clusterUuid});
           }
 

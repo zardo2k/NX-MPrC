@@ -1,0 +1,25 @@
+
+<!-- The title of the ion-view will be shown on the navbar -->
+<ion-view title="{{cluster.name}}/Alerts"
+          ng-controller="AlertsCtrl">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="item in alerts">
+        <ion-slide-box show-pager="false">
+          <ion-slide>
+            <div class="box yellow">
+              {{item.severity}}
+            </div>
+          </ion-slide>
+          <ion-slide>
+            Resolve ?
+            <button class="button button-light">
+               Yes
+            </button>
+          </ion-slide>
+        </ion-slide-box>
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+</ion-view>

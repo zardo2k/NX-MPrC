@@ -17,6 +17,8 @@ var URL = {
   HOSTS: BASEPATH + '/hosts'
 }
 
+var ALERTS = BASEPATH + '/alerts'
+
 function NXRequest(host, port, username, password) {
   this.host = host;
   this.port = port;

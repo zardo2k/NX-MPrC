@@ -27,11 +27,13 @@
     <script src="js/FbClustersSrv.js"></script>
     <script src="js/FbClustersSummarySrv.js"></script>
     <script src="js/FbVMsSrv.js"></script>
+    <script src="js/FbAlertsSrv.js"></script>
 
     <script src="js/ClusterCtrl.js"></script>
     <script src="js/ClustersCtrl.js"></script>
     <script src="js/SideBarCtrl.js"></script>
     <script src="js/NavBarCtrl.js"></script>
+    <script src="js/AlertsCtrl.js"></script>
   </head>
   <body ng-app="starter">
   <div id="n-content-wrapper">
@@ -40,16 +42,14 @@
       <!-- Center content -->
       <ion-side-menu-content>
         <ion-nav-bar
-            animation="nav-title-slide-ios7"
             ng-controller="NavBarCtrl"
-            title="{{cluster.name}}"
             delegate-handle="myNav">
           <ion-nav-buttons side="left">
             <button class="button icon ion-navicon button-clear"
                     ng-click="toggleLeftSideMenu()"></button>
           </ion-nav-buttons>
         </ion-nav-bar>
-        <ion-nav-view animation="slide-left-right"
+        <ion-nav-view
           class="main-content-view">
         </ion-nav-view>
       </ion-side-menu-content>

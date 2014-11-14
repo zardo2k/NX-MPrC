@@ -18,7 +18,19 @@ ClusterAlerts.prototype.syncData = function() {
   console.log('ClusterAlerts.syncData() ' + this.clusterUuid);
   var _this = this;
 
-  this.nxRequest.getClusterAlerts(function(error, res, body) {
+  NXFirebase.fbClusterAlerts.child(_this.clusterUuid)
+    .orderByChild("createdTimeStampInUsecs")
+    .limitToLast(1).once('value',
+    function(snapShotData) {
+      console.log(snapShotData.val());
+    });
+  var options = {
+    qs: {
+      resolved: false,
+      count: 10
+    }
+  }
+  this.nxRequest.getClusterAlerts(options, function(error, res, body) {
     if(Utils.isRequestFailed(error, res, body)) {
       return;
     }
@@ -26,8 +38,6 @@ ClusterAlerts.prototype.syncData = function() {
     var dataObject = JSON.parse(body);
 
     dataObject.entities.forEach(function(item) {
-      // Our usageStats contains keys with '.' in the name.
-      // This will make all the '.' to '_'.
       NXFirebase.fbClusterAlerts.child(_this.clusterUuid).child(item[_this.idAttribute]).update(item);
     });
   });

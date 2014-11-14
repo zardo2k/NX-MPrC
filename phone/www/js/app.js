@@ -46,9 +46,9 @@ angular.module('starter',
         url: '/clusters/:id',
         templateUrl: 'templates/cluster.html'
       })
-      .state('music', {
-        url: '/music',
-        templateUrl: 'templates/music.html'
+      .state('alerts', {
+        url: '/alerts/:id',
+        templateUrl: 'templates/alerts.html'
       });
 
       $urlRouterProvider.otherwise('/clusters');
