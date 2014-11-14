@@ -39,21 +39,18 @@
     <ion-side-menus>
       <!-- Center content -->
       <ion-side-menu-content>
-        <div id="nav"
-             ng-controller="NavBarCtrl">
-          <label class="nav-trigger"
-                 ng-click="toggleLeftSideMenu()"></label>
-          <!--     <a class="n-logo-link">
-                <img src="images/header-logo.png">
-              </a> -->
-          <span class="n-nav-label"
-            ng-click="showRenamePopup()">{{cluster.name}}</span>
-
-        </div>
-
+        <ion-nav-bar
+            animation="nav-title-slide-ios7"
+            ng-controller="NavBarCtrl"
+            title="{{cluster.name}}"
+            delegate-handle="myNav">
+          <ion-nav-buttons side="left">
+            <button class="button icon ion-navicon button-clear"
+                    ng-click="toggleLeftSideMenu()"></button>
+          </ion-nav-buttons>
+        </ion-nav-bar>
         <ion-nav-view animation="slide-left-right"
           class="main-content-view">
-          <!-- Center content -->
         </ion-nav-view>
       </ion-side-menu-content>
 
