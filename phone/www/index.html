@@ -59,17 +59,17 @@
         ng-controller="SideBarCtrl">
         <ion-list>
           <ion-item ng-click="onSelectCluster('All Clusters')">All Clusters</ion-item>
-          <ion-item ng-repeat="cluster in clusters">
+          <ion-item ng-click="onSelectCluster(cluster)" ng-repeat="cluster in clusters">
+            <div class="n-side-cluster-item">
               <button class="button right-buttons button-small icon ion-settings button-light n-side-edit-icon"
-                      ng-click="showRenamePopup(cluster)">
+                      ng-click="showRenamePopup(cluster); $event.stopPropagation()">
               </button>
-              <span ng-click="onSelectCluster(cluster)">{{cluster.name}}</span>
+              <span >
+                {{cluster.name}}
+              </span>
+            </div>
           </ion-item>
         </ion-list>
-      </ion-side-menu>
-
-      <!-- Right menu -->
-      <ion-side-menu side="right">
       </ion-side-menu>
     </ion-side-menus>
   </div>

@@ -144,9 +144,17 @@ body {
 
 }
 
-.n-side-edit-icon {
-  margin-right: rec20px;
+.n-side-cluster-item {
+  span {
+    padding-left: 20px;
+    line-height: 30px;
+  }
+
+  .n-side-edit-icon {
+    margin-right: 20px;
+  }
 }
+
 .n-vantage-point {
 	height: 100%;
 	background: white;
