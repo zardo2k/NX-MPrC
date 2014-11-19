@@ -46,10 +46,8 @@ angular.module('SideBarModule', ['FbClustersSrvModule'])
                 text: '<b>Save</b>',
                 type: 'button-positive',
                 onTap: function(e) {
-                  FbClustersSrv.renameCluster(cluster.clusterUuid, $scope.s
-
-
-                  data.name);
+                  FbClustersSrv.renameCluster(cluster.clusterUuid, $scope.
+                      data.name);
                   console.log("Change Cluster Name" + cluster.name);
                 }
               },

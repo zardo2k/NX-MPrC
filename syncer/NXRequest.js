@@ -1,3 +1,5 @@
+/* global require: false */
+/*jshint globalstrict: true, node: true */
 'use strict';
 
 var util = require('util');
@@ -15,9 +17,9 @@ var URL = {
   CONTAINERS: BASEPATH + '/containers',
   STORAGE_POOLS: BASEPATH + '/storage_pools',
   HOSTS: BASEPATH + '/hosts'
-}
+};
 
-var ALERTS = BASEPATH + '/alerts'
+var ALERTS = BASEPATH + '/alerts';
 
 function NXRequest(host, port, username, password) {
   this.host = host;
