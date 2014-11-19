@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08973b7e-f35c-4be6-a8c5-4fb68302e700" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phone/www/templates/clusters.html" afterPath="$PROJECT_DIR$/phone/www/templates/clusters.html" />
-    </list>
+    <list default="true" id="08973b7e-f35c-4be6-a8c5-4fb68302e700" name="Default" comment="" />
     <ignored path="NX-MPrC.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
