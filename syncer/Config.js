@@ -32,12 +32,12 @@ var clusterConfigs = [
 //    username: 'admin',
 //    password: 'admin'
 //  },
-//  {
-//    host: '10.3.100.73',
-//    port: 9440,
-//    username: 'viewonly',
-//    password: 'viewonly'
-//  },
+  {
+    host: '10.3.100.73',
+    port: 9440,
+    username: 'viewonly',
+    password: 'viewonly'
+  },
 //  {
 //    host: '10.4.41.29',
 //    port: 9440,
